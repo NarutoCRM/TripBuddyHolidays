@@ -4,7 +4,7 @@ export default function PageHero({
   description,
 }) {
   return (
-    <section className="relative overflow-hidden bg-[#f80909] py-20 text-white md:py-28">
+    <section className="relative overflow-hidden bg-[#c7c3c3] py-20 text-white md:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(233,162,59,.20),transparent_30%),radial-gradient(circle_at_20%_80%,rgba(18,60,105,.75),transparent_45%)]" />
 
       <div className="container relative">

@@ -43,9 +43,9 @@ const legalLinks = [
     ["Disclaimer", "/legal/disclaimer"],
 ];
 
-function FooterLinks({ links }) {
+function FooterLinks({ links, className = "gap-2.5" }) {
     return (
-        <ul className="mt-4 grid gap-2.5">
+        <ul className={`mt-4 grid ${className}`}>
             {links.map(([name, href]) => (
                 <li key={href}>
                     <Link
@@ -63,7 +63,7 @@ function FooterLinks({ links }) {
 export default function Footer() {
     return (
         <footer className="bg-[#081b2f] text-white">
-            <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.8fr_1.5fr_1fr] lg:gap-8">
+            <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.8fr_1.5fr_1.5fr_1fr] lg:gap-8">
                 <section>
                     <h2 className="text-xl font-black">
                         TripBuddy <span className="text-[#e9a23b]">Holidays</span>
@@ -108,15 +108,15 @@ export default function Footer() {
                 <section>
                     <h2 className="font-black">International Destinations</h2>
                     <FooterLinks links={internationalDestinations} />
-                    
+
                 </section>
                 <section>
                     <h2 className="font-black">Domestic Destinations</h2>
                     <FooterLinks links={domesticDestinations} />
                 </section>
-                <section>
+                <section className="min-w-0">
                     <h2 className="font-black">Legal</h2>
-                    <FooterLinks links={legalLinks} />
+                    <FooterLinks links={legalLinks} className="gap-4" />
                 </section>
             </div>
 

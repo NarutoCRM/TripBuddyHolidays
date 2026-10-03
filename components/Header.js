@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import logo from "../public/images/TripBuddyLogo.png";
 
 const dealLinks = [
   ["All Flight Deals", "/deals"],
@@ -88,22 +89,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="container flex h-19.5 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-(--primary) text-xl text-white">
-            ✈
-          </div>
-
-          <div>
-            <div className="text-lg font-black tracking-tight">
-              TripBuddy{" "}
-              <span className="text-(--primary)">
-                Holidays
-              </span>
-            </div>
-
-            <div className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
-              Travel made easier
-            </div>
-          </div>
+          
+          <img src={logo.src} alt="TripBuddy Holidays Logo" className="h-20 w-auto" />
+          
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">

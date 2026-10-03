@@ -1,0 +1,176 @@
+[
+  {
+    "name": "John F. Kennedy International Airport",
+    "city": "New York",
+    "country": "United States",
+    "iata": "JFK"
+  },
+  {
+    "name": "LaGuardia Airport",
+    "city": "New York",
+    "country": "United States",
+    "iata": "LGA"
+  },
+  {
+    "name": "Newark Liberty International Airport",
+    "city": "Newark",
+    "country": "United States",
+    "iata": "EWR"
+  },
+  {
+    "name": "Los Angeles International Airport",
+    "city": "Los Angeles",
+    "country": "United States",
+    "iata": "LAX"
+  },
+  {
+    "name": "San Francisco International Airport",
+    "city": "San Francisco",
+    "country": "United States",
+    "iata": "SFO"
+  },
+  {
+    "name": "Chicago O'Hare International Airport",
+    "city": "Chicago",
+    "country": "United States",
+    "iata": "ORD"
+  },
+  {
+    "name": "Miami International Airport",
+    "city": "Miami",
+    "country": "United States",
+    "iata": "MIA"
+  },
+  {
+    "name": "Boston Logan International Airport",
+    "city": "Boston",
+    "country": "United States",
+    "iata": "BOS"
+  },
+  {
+    "name": "Hartsfield-Jackson Atlanta International Airport",
+    "city": "Atlanta",
+    "country": "United States",
+    "iata": "ATL"
+  },
+  {
+    "name": "Dallas/Fort Worth International Airport",
+    "city": "Dallas",
+    "country": "United States",
+    "iata": "DFW"
+  },
+  {
+    "name": "Seattle-Tacoma International Airport",
+    "city": "Seattle",
+    "country": "United States",
+    "iata": "SEA"
+  },
+  {
+    "name": "Harry Reid International Airport",
+    "city": "Las Vegas",
+    "country": "United States",
+    "iata": "LAS"
+  },
+  {
+    "name": "Heathrow Airport",
+    "city": "London",
+    "country": "United Kingdom",
+    "iata": "LHR"
+  },
+  {
+    "name": "Gatwick Airport",
+    "city": "London",
+    "country": "United Kingdom",
+    "iata": "LGW"
+  },
+  {
+    "name": "Paris Charles de Gaulle Airport",
+    "city": "Paris",
+    "country": "France",
+    "iata": "CDG"
+  },
+  {
+    "name": "Amsterdam Airport Schiphol",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "iata": "AMS"
+  },
+  {
+    "name": "Frankfurt Airport",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "iata": "FRA"
+  },
+  {
+    "name": "Madrid-Barajas Airport",
+    "city": "Madrid",
+    "country": "Spain",
+    "iata": "MAD"
+  },
+  {
+    "name": "Rome Fiumicino Airport",
+    "city": "Rome",
+    "country": "Italy",
+    "iata": "FCO"
+  },
+  {
+    "name": "Dubai International Airport",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "iata": "DXB"
+  },
+  {
+    "name": "Doha Hamad International Airport",
+    "city": "Doha",
+    "country": "Qatar",
+    "iata": "DOH"
+  },
+  {
+    "name": "Singapore Changi Airport",
+    "city": "Singapore",
+    "country": "Singapore",
+    "iata": "SIN"
+  },
+  {
+    "name": "Hong Kong International Airport",
+    "city": "Hong Kong",
+    "country": "Hong Kong",
+    "iata": "HKG"
+  },
+  {
+    "name": "Indira Gandhi International Airport",
+    "city": "New Delhi",
+    "country": "India",
+    "iata": "DEL"
+  },
+  {
+    "name": "Chhatrapati Shivaji Maharaj International Airport",
+    "city": "Mumbai",
+    "country": "India",
+    "iata": "BOM"
+  },
+  {
+    "name": "Kempegowda International Airport",
+    "city": "Bengaluru",
+    "country": "India",
+    "iata": "BLR"
+  },
+  {
+    "name": "Rajiv Gandhi International Airport",
+    "city": "Hyderabad",
+    "country": "India",
+    "iata": "HYD"
+  },
+  {
+    "name": "Netaji Subhas Chandra Bose International Airport",
+    "city": "Kolkata",
+    "country": "India",
+    "iata": "CCU"
+  },
+  {
+    "name": "Chennai International Airport",
+    "city": "Chennai",
+    "country": "India",
+    "iata": "MAA"
+  }
+]
