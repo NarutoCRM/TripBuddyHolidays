@@ -89,7 +89,24 @@ const deals = [
   ["Cheap Flights Deals", "/deals/cheap-flights-deals"],
 ];
 
-export default function Home() {
+function firstQueryValue(value) {
+  return Array.isArray(value) ? value[0] || "" : value || "";
+}
+
+export default async function Home({ searchParams }) {
+  const query = await searchParams;
+  const cabinOptions = ["economy", "premium-economy", "business", "first-class"];
+  const travelers = Number(firstQueryValue(query.travelers));
+  const initialSearch = {
+    from: firstQueryValue(query.from),
+    to: firstQueryValue(query.to),
+    tripType: firstQueryValue(query.tripType),
+    departure: firstQueryValue(query.departure),
+    returnDate: firstQueryValue(query.return),
+    cabin: cabinOptions.includes(firstQueryValue(query.cabin)) ? firstQueryValue(query.cabin) : "economy",
+    travelers: Number.isInteger(travelers) && travelers >= 1 && travelers <= 9 ? travelers : 1,
+  };
+
   return (
     <main>
       {/* HERO */}
@@ -138,7 +155,7 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mt-14 md:mt-20">
-            <TripPlanner />
+            <TripPlanner initialSearch={initialSearch} />
           </div>
         </div>
       </section>

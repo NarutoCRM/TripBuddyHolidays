@@ -89,9 +89,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="container flex h-19.5 items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          
+
           <img src={logo.src} alt="TripBuddy Holidays Logo" className="h-20 w-auto" />
-          
+
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
@@ -168,7 +168,8 @@ export default function Header() {
           href="/deals"
           className="hidden rounded-full bg-(--primary) px-5 py-3 text-sm font-black text-white transition hover:bg-(--primary-dark) lg:inline-flex"
         >
-          Explore Deals
+          <p> Call us 24/7 <br /> +1(844)-365-4037 </p>
+
         </Link>
 
         <button

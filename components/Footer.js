@@ -34,14 +34,7 @@ const domesticDestinations = [
     ["Orlando, United States", "/destinations/domestic/orlando"],
 ];
 
-const legalLinks = [
-    ["Privacy Policy", "/legal/privacy-policy"],
-    ["Terms & Conditions", "/legal/terms-and-conditions"],
-    ["Cancellation & Refund", "/legal/cancellation-refund"],
-    ["Advertisement Disclosure", "/legal/advertisement-disclosure"],
-    ["Cookie Policy", "/legal/cookie-policy"],
-    ["Disclaimer", "/legal/disclaimer"],
-];
+
 
 function FooterLinks({ links, className = "gap-2.5" }) {
     return (
@@ -63,7 +56,7 @@ function FooterLinks({ links, className = "gap-2.5" }) {
 export default function Footer() {
     return (
         <footer className="bg-[#081b2f] text-white">
-            <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.8fr_1.5fr_1.5fr_1fr] lg:gap-8">
+            <div className="container grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[3.1fr_3.8fr_5.5fr_5.5fr] lg:gap-10">
                 <section>
                     <h2 className="text-xl font-black">
                         TripBuddy <span className="text-[#e9a23b]">Holidays</span>
@@ -114,16 +107,45 @@ export default function Footer() {
                     <h2 className="font-black">Domestic Destinations</h2>
                     <FooterLinks links={domesticDestinations} />
                 </section>
-                <section className="min-w-0">
-                    <h2 className="font-black">Legal</h2>
-                    <FooterLinks links={legalLinks} className="gap-4" />
-                </section>
+
             </div>
 
-            <div className="border-t border-white/10">
-                <div className="container py-5 text-xs text-slate-400">
-                    <p>© {new Date().getFullYear()} TripBuddy Holidays. All rights reserved.</p>
+
+            {/* legal page  */}
+
+            <div className=" container border-t border-white/10 pb-6 pt-6">
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-500">
+
+                    <a href="/legal/privacy-policy" className="hover:text-white">
+                        Privacy Policy
+                    </a>
+
+                    <a href="/legal/terms-and-conditions" className="hover:text-white">
+                        Terms & Conditions
+                    </a>
+
+                    <a href="/legal/cancellation-refund" className="hover:text-white">
+                        Cancellation & Refund
+                    </a>
+
+                    <a href="/legal/cookie-policy" className="hover:text-white">
+                        Cookie Policy
+                    </a>
+
+                    <a href="/legal/disclaimer" className="hover:text-white">
+                        Disclaimer
+                    </a>
                 </div>
+
+
+                <div className="mt-5 flex flex-col justify-between gap-3 text-xs text-slate-500 sm:flex-row">
+                    <p>
+                        © {new Date().getFullYear()} EasyTripsNow. All rights reserved.
+                    </p>
+
+                    <p>Operated by SL Distributors LLC</p>
+                </div>
+
             </div>
         </footer>
     );
