@@ -34,11 +34,10 @@ export default function FlightResults({ search }) {
   const [status, setStatus] = useState("loading");
   const [flights, setFlights] = useState([]);
   const [mode, setMode] = useState("live");
-  const [selectedId, setSelectedId] = useState("");
+
   const [selectionMessage, setSelectionMessage] = useState("");
   const [retryCount, setRetryCount] = useState(0);
-  const [stopFilter, setStopFilter] = useState("all");
-  const [sortByPrice, setSortByPrice] = useState(false);
+
   const summaryIsValid = Boolean(
     search.from &&
     search.to &&
@@ -52,16 +51,6 @@ export default function FlightResults({ search }) {
     if (!summaryIsValid) return null;
     return `${search.tripType === "round-trip" ? "Round Trip" : "One Way"} · ${search.cabinLabel} · ${search.travelers} Traveler${search.travelers === 1 ? "" : "s"}`;
   }, [search, summaryIsValid]);
-  const visibleFlights = useMemo(() => {
-    const filtered = flights.filter((flight) => {
-      if (stopFilter === "nonstop") return Number(flight.stops) === 0;
-      if (stopFilter === "one-stop") return Number(flight.stops) === 1;
-      return true;
-    });
-    return sortByPrice
-      ? filtered.sort((a, b) => Number(a.price) - Number(b.price))
-      : filtered;
-  }, [flights, stopFilter, sortByPrice]);
 
   useEffect(() => {
     if (!summaryIsValid) return;
@@ -87,25 +76,6 @@ export default function FlightResults({ search }) {
     };
   }, [search, summaryIsValid, retryCount]);
 
-  const displayedStatus = summaryIsValid ? status : "invalid";
-
-  const selectFlight = (flight) => {
-    setSelectedId(flight.id);
-    setSelectionMessage(
-      mode === "demo"
-        ? " flight selected. Live booking will be available once the flight API is connected."
-        : "Flight selected and saved for your trip.",
-    );
-    try {
-      window.sessionStorage.setItem(
-        "tripbuddy_selected_flight",
-        JSON.stringify({ search, flight }),
-      );
-    } catch (error) {
-      console.error("Unable to save selected flight:", error);
-    }
-  };
-
   return (
     <main className="min-h-[60vh] bg-slate-50 py-10 sm:py-14">
       <div className="container max-w-5xl">
@@ -115,7 +85,7 @@ export default function FlightResults({ search }) {
               <p className="text-xs font-black uppercase tracking-[.18em] text-blue-700">
                 Your flight search
               </p>
-              <h1 className="mt-2 break-words text-2xl font-black text-slate-950 sm:text-3xl">
+              <h1 className="mt-2 text-2xl font-black text-slate-950 sm:text-3xl">
                 {search.from?.city || "Airport unavailable"} (
                 {search.from?.code || "—"}) <span aria-hidden="true">→</span>{" "}
                 {search.to?.city || "Airport unavailable"} (
