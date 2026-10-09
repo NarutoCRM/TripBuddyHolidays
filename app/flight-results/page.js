@@ -1,9 +1,10 @@
-import FlightResults from "../../components/FlightResults";
+import FlightResults from "../../components/flight/FlightResults";
 import { getAirportByIata } from "../../lib/airportSearch";
 
 export const metadata = {
   title: "Flight Results | TripBuddy Holidays",
-  description: "Review live flight availability for your selected route and dates.",
+  description:
+    "Review live flight availability for your selected route and dates.",
 };
 
 function first(value) {
@@ -16,34 +17,45 @@ const cabinLabels = {
   business: "Business",
   "first-class": "First Class",
 };
-
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms * 1000));
 export default async function FlightResultsPage({ searchParams }) {
   const query = await searchParams;
+  await sleep(1);
   const from = getAirportByIata(first(query.from));
   const to = getAirportByIata(first(query.to));
-  const tripType = first(query.tripType) === "one-way" ? "one-way" : "round-trip";
-  const cabin = cabinLabels[first(query.cabin)] ? first(query.cabin) : "economy";
+  const tripType =
+    first(query.tripType) === "one-way" ? "one-way" : "round-trip";
+  const cabin = cabinLabels[first(query.cabin)]
+    ? first(query.cabin)
+    : "economy";
   const travelersValue = Number(first(query.travelers));
 
   const search = {
     tripType,
-    from: from ? {
-      code: from.iata,
-      name: from.name,
-      city: from.city,
-      country: from.country,
-    } : null,
-    to: to ? {
-      code: to.iata,
-      name: to.name,
-      city: to.city,
-      country: to.country,
-    } : null,
+    from: from
+      ? {
+          code: from.iata,
+          name: from.name,
+          city: from.city,
+          country: from.country,
+        }
+      : null,
+    to: to
+      ? {
+          code: to.iata,
+          name: to.name,
+          city: to.city,
+          country: to.country,
+        }
+      : null,
     departureDate: first(query.departure),
     returnDate: first(query.return),
     cabin,
     cabinLabel: cabinLabels[cabin],
-    travelers: Number.isInteger(travelersValue) && travelersValue > 0 ? travelersValue : 1,
+    travelers:
+      Number.isInteger(travelersValue) && travelersValue > 0
+        ? travelersValue
+        : 1,
   };
 
   return <FlightResults search={search} />;
